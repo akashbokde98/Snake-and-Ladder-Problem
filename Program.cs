@@ -11,18 +11,23 @@ namespace SnakeLadder
             int winPosition = 100;
 
             Random rndNum = new Random();
-            int dieNum = rndNum.Next(1, 7);
+            //int dieNum = rndNum.Next(1, 7);
 
             Random rndNum2 = new Random();
             //int checkOpt = rndNum2.Next(0, 3);
 
             while (playerPosition < winPosition)
             {
+                int dieNum = rndNum.Next(1, 7);
+                Console.WriteLine("dieNum:" + dieNum);
                 switch (rndNum2.Next(0, 3))
                 {
                     case 1:
-                        playerPosition += dieNum;
-                        Console.WriteLine("playerPosition:" + playerPosition);
+                        if ( ( playerPosition < 100 ) && ( playerPosition + dieNum <= 100 ) )
+                        {
+                            playerPosition += dieNum;
+                            Console.WriteLine("playerPosition:" + playerPosition);
+                        }
                         break;
 
                     case 2:
