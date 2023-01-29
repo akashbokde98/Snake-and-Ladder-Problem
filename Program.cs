@@ -9,17 +9,15 @@ namespace SnakeLadder
             Console.WriteLine("Snake and Ladder Game Played With Single Player at Start Position 0.");
             int playerPosition = 0;
             int winPosition = 100;
+            int diceTimes = 0;
 
             Random rndNum = new Random();
-            //int dieNum = rndNum.Next(1, 7);
-
             Random rndNum2 = new Random();
-            //int checkOpt = rndNum2.Next(0, 3);
 
             while (playerPosition < winPosition)
             {
                 int dieNum = rndNum.Next(1, 7);
-                Console.WriteLine("dieNum:" + dieNum);
+                diceTimes++;
                 switch (rndNum2.Next(0, 3))
                 {
                     case 1:
@@ -40,6 +38,7 @@ namespace SnakeLadder
                         break;
                 }
             }
+            Console.WriteLine(diceTimes + " Times Dice Was Played To Win the Game.");
         }
     }
 }
